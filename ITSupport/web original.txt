@@ -19,14 +19,14 @@
   <appSettings>
 <!--<add key="ChartImageHandler" value="storage=file;timeout=20;" />-->
 <add key="ChartImageHandler" value="storage=memory;deleteAfterServicing=true;"/>
-    <add key="ConnString" value="Data Source=WIN-A0RVMTKTI36;Initial Catalog=EliteDB;User ID=Enterprise; password=Le0p0wer@1;pooling=true;Max Pool Size=500;" />
-    <!--<add key="ConnString" value="Data Source=216.150.76.26,4433;Initial Catalog=EliteDB;User ID=Enterprise; password=Le0p0wer@1"/>
+    <add key="ConnString" value="Data Source=WIN-A0RVMTKTI36;Initial Catalog=EliteDB;User ID=Enterprise; password=;poolin Pool Size=500;" />
+    <!--<add key="ConnString" value="Data Source=216.150.76.26,4433;Initial Catalog=EliteDB;User ID=Enterprise; password="/>
     <add key="ConnString" value="Data Source=LPZ-JMOHAN01\SQLEXPRESS;Initial Catalog=TestDB;User ID=user2; password=user2"/>
-    <add key="ConnString" value="Data Source=206.225.85.212\SQLEXPRESS;Initial Catalog=ITSupport;User ID=eliteuser; password=Le0p0wer@1"/>-->
+    <add key="ConnString" value="Data Source=206.225.85.212\SQLEXPRESS;Initial Catalog=ITSupport;User ID=eliteuser; password="/>-->
   </appSettings>
   <connectionStrings>
     <remove name="LocalSqlServer" />
-    <add name="HelpDesk" connectionString="Data Source=WIN-A0RVMTKTI36;Initial Catalog=EliteDB;User ID=Enterprise; password=Le0p0wer@1;pooling=true;Max Pool Size=500;" />
+    <add name="HelpDesk" connectionString="Data Source=WIN-A0RVMTKTI36;Initial Catalog=EliteDB;User ID=Enterprise; password=;pooling=true;Max Pool Size=500;" />
   </connectionStrings>
   <system.web>
 	  <trust level = "Full" />

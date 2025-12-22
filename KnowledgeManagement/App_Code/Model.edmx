@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="KMModelStoreContainer" />
+        <Function Name="CRM_KB_Delete_ATR_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Delete_BestPractice_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Get_ATR_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Get_BestPractice_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_GetAll_ATR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CRM_KB_GetAll_BestPractice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CRM_KB_Insert_ATR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="GeneralCategory" Type="varchar" Mode="In" />
+          <Parameter Name="ComplaintDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Product" Type="varchar" Mode="In" />
+          <Parameter Name="RootCause" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CAShortData" Type="varchar" Mode="In" />
+          <Parameter Name="SearchTag" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+          <Parameter Name="CARNo" Type="varchar" Mode="In" />
+          <Parameter Name="CARDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ATRNo" Type="varchar" Mode="In" />
+          <Parameter Name="ATRDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="BenefitAchieved" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedBy" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ApprovedBY" Type="varchar" Mode="In" />
+          <Parameter Name="createdBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Insert_BestPractice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Area" Type="varchar" Mode="In" />
+          <Parameter Name="Activity" Type="varchar" Mode="In" />
+          <Parameter Name="Product" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+          <Parameter Name="SearchTag" Type="varchar" Mode="In" />
+          <Parameter Name="MonitoringSystem" Type="varchar" Mode="In" />
+          <Parameter Name="BestPracticeSummary" Type="varchar(max)" Mode="In" />
+          <Parameter Name="SOPReferenceAndVersionNo" Type="varchar" Mode="In" />
+          <Parameter Name="BenefitAchieved" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedBy" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ApprovedBY" Type="varchar" Mode="In" />
+          <Parameter Name="createdBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Search_ATRResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyWord" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Search_BestPracticeResults" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyWord" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Update_ATR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="GeneralCategory" Type="varchar" Mode="In" />
+          <Parameter Name="ComplaintDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Product" Type="varchar" Mode="In" />
+          <Parameter Name="RootCause" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CAShortData" Type="varchar" Mode="In" />
+          <Parameter Name="SearchTag" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+          <Parameter Name="CARNo" Type="varchar" Mode="In" />
+          <Parameter Name="CARDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ATRNo" Type="varchar" Mode="In" />
+          <Parameter Name="ATRDetails" Type="varchar(max)" Mode="In" />
+          <Parameter Name="BenefitAchieved" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedBy" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ApprovedBY" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CRM_KB_Update_BestPractice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SLNO" Type="int" Mode="In" />
+          <Parameter Name="Area" Type="varchar" Mode="In" />
+          <Parameter Name="Activity" Type="varchar" Mode="In" />
+          <Parameter Name="Product" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+          <Parameter Name="SearchTag" Type="varchar" Mode="In" />
+          <Parameter Name="MonitoringSystem" Type="varchar" Mode="In" />
+          <Parameter Name="BestPracticeSummary" Type="varchar(max)" Mode="In" />
+          <Parameter Name="SOPReferenceAndVersionNo" Type="varchar" Mode="In" />
+          <Parameter Name="BenefitAchieved" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedBy" Type="varchar" Mode="In" />
+          <Parameter Name="PreparedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ApprovedBY" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="KMEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="CRM_KB_GetAll_ATR_Result" ReturnType="Collection(KMModel.CRM_KB_GetAll_ATR_Result)" />
+          <FunctionImport Name="CRM_KB_GetAll_BestPractice_Result" ReturnType="Collection(KMModel.CRM_KB_GetAll_BestPractice_Result)" />
+          <FunctionImport Name="CRM_KB_Update_ATR">
+            <Parameter Name="SLNO" Mode="In" Type="Int32" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="GeneralCategory" Mode="In" Type="String" />
+            <Parameter Name="ComplaintDetails" Mode="In" Type="String" />
+            <Parameter Name="Product" Mode="In" Type="String" />
+            <Parameter Name="RootCause" Mode="In" Type="String" />
+            <Parameter Name="CAShortData" Mode="In" Type="String" />
+            <Parameter Name="SearchTag" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+            <Parameter Name="CARNo" Mode="In" Type="String" />
+            <Parameter Name="CARDetails" Mode="In" Type="String" />
+            <Parameter Name="ATRNo" Mode="In" Type="String" />
+            <Parameter Name="ATRDetails" Mode="In" Type="String" />
+            <Parameter Name="BenefitAchieved" Mode="In" Type="String" />
+            <Parameter Name="PreparedBy" Mode="In" Type="String" />
+            <Parameter Name="PreparedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ApprovedBY" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Update_BestPractice">
+            <Parameter Name="SLNO" Mode="In" Type="Int32" />
+            <Parameter Name="Area" Mode="In" Type="String" />
+            <Parameter Name="Activity" Mode="In" Type="String" />
+            <Parameter Name="Product" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+            <Parameter Name="SearchTag" Mode="In" Type="String" />
+            <Parameter Name="MonitoringSystem" Mode="In" Type="String" />
+            <Parameter Name="BestPracticeSummary" Mode="In" Type="String" />
+            <Parameter Name="SOPReferenceAndVersionNo" Mode="In" Type="String" />
+            <Parameter Name="BenefitAchieved" Mode="In" Type="String" />
+            <Parameter Name="PreparedBy" Mode="In" Type="String" />
+            <Parameter Name="PreparedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ApprovedBY" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Search_ATRResults" ReturnType="Collection(KMModel.CRM_KB_Search_ATRResults_Result)">
+          <Parameter Name="KeyWord" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Search_BestPracticeResults" ReturnType="Collection(KMModel.CRM_KB_Search_BestPracticeResults_Result)">
+          <Parameter Name="KeyWord" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Delete_ATR_BYID">
+          <Parameter Name="SLNO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Delete_BestPractice_BYID">
+          <Parameter Name="SLNO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Get_ATR_BYID" ReturnType="Collection(KMModel.CRM_KB_Get_ATR_BYID_Result)">
+          <Parameter Name="SLNO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Get_BestPractice_BYID" ReturnType="Collection(KMModel.CRM_KB_Get_BestPractice_BYID_Result)">
+          <Parameter Name="SLNO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Insert_ATR">
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="GeneralCategory" Mode="In" Type="String" />
+            <Parameter Name="ComplaintDetails" Mode="In" Type="String" />
+            <Parameter Name="Product" Mode="In" Type="String" />
+            <Parameter Name="RootCause" Mode="In" Type="String" />
+            <Parameter Name="CAShortData" Mode="In" Type="String" />
+            <Parameter Name="SearchTag" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+            <Parameter Name="CARNo" Mode="In" Type="String" />
+            <Parameter Name="CARDetails" Mode="In" Type="String" />
+            <Parameter Name="ATRNo" Mode="In" Type="String" />
+            <Parameter Name="ATRDetails" Mode="In" Type="String" />
+            <Parameter Name="BenefitAchieved" Mode="In" Type="String" />
+            <Parameter Name="PreparedBy" Mode="In" Type="String" />
+            <Parameter Name="PreparedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ApprovedBY" Mode="In" Type="String" />
+            <Parameter Name="createdBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CRM_KB_Insert_BestPractice">
+            <Parameter Name="Area" Mode="In" Type="String" />
+            <Parameter Name="Activity" Mode="In" Type="String" />
+            <Parameter Name="Product" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+            <Parameter Name="SearchTag" Mode="In" Type="String" />
+            <Parameter Name="MonitoringSystem" Mode="In" Type="String" />
+            <Parameter Name="BestPracticeSummary" Mode="In" Type="String" />
+            <Parameter Name="SOPReferenceAndVersionNo" Mode="In" Type="String" />
+            <Parameter Name="BenefitAchieved" Mode="In" Type="String" />
+            <Parameter Name="PreparedBy" Mode="In" Type="String" />
+            <Parameter Name="PreparedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ApprovedBY" Mode="In" Type="String" />
+            <Parameter Name="createdBy" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="CRM_KB_GetAll_ATR_Result">
+          <Property Type="Int32" Name="SLNO" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="GeneralCategory" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ComplaintDetails" Nullable="false" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RootCause" Nullable="false" />
+          <Property Type="String" Name="CAShortData" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARDetails" Nullable="true" />
+          <Property Type="String" Name="ATRNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ATRDetails" Nullable="true" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PreparedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CRM_KB_GetAll_BestPractice_Result">
+          <Property Type="Int32" Name="SLNO" Nullable="false" />
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Activity" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="MonitoringSystem" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BestPracticeSummary" Nullable="false" />
+          <Property Type="String" Name="SOPReferenceAndVersionNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PreparedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CRM_KB_Search_ATRResults_Result">
+          <Property Type="Int32" Name="SLNO" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="GeneralCategory" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ComplaintDetails" Nullable="false" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RootCause" Nullable="false" />
+          <Property Type="String" Name="CAShortData" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARDetails" Nullable="true" />
+          <Property Type="String" Name="ATRNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ATRDetails" Nullable="true" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PreparedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CRM_KB_Search_BestPracticeResults_Result">
+          <Property Type="Int32" Name="SLNO" Nullable="false" />
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Activity" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="MonitoringSystem" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BestPracticeSummary" Nullable="false" />
+          <Property Type="String" Name="SOPReferenceAndVersionNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PreparedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CRM_KB_Get_ATR_BYID_Result">
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="GeneralCategory" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ComplaintDetails" Nullable="false" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RootCause" Nullable="false" />
+          <Property Type="String" Name="CAShortData" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CARDetails" Nullable="true" />
+          <Property Type="String" Name="ATRNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ATRDetails" Nullable="true" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PreparedDate" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CRM_KB_Get_BestPractice_BYID_Result">
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Activity" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Product" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SearchTag" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="MonitoringSystem" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BestPracticeSummary" Nullable="false" />
+          <Property Type="String" Name="SOPReferenceAndVersionNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="BenefitAchieved" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PreparedDate" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="ApprovedBY" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="createdOn" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KMModelStoreContainer" CdmEntityContainer="KMEntities" >
+          <FunctionImportMapping FunctionImportName="CRM_KB_GetAll_ATR_Result" FunctionName="KMModel.Store.CRM_KB_GetAll_ATR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_GetAll_ATR_Result">
+                <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="GeneralCategory" ColumnName="GeneralCategory" />
+                <ScalarProperty Name="ComplaintDetails" ColumnName="ComplaintDetails" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="RootCause" ColumnName="RootCause" />
+                <ScalarProperty Name="CAShortData" ColumnName="CAShortData" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="CARNo" ColumnName="CARNo" />
+                <ScalarProperty Name="CARDetails" ColumnName="CARDetails" />
+                <ScalarProperty Name="ATRNo" ColumnName="ATRNo" />
+                <ScalarProperty Name="ATRDetails" ColumnName="ATRDetails" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_GetAll_BestPractice_Result" FunctionName="KMModel.Store.CRM_KB_GetAll_BestPractice">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_GetAll_BestPractice_Result">
+                <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="MonitoringSystem" ColumnName="MonitoringSystem" />
+                <ScalarProperty Name="BestPracticeSummary" ColumnName="BestPracticeSummary" />
+                <ScalarProperty Name="SOPReferenceAndVersionNo" ColumnName="SOPReferenceAndVersionNo" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_Update_ATR" FunctionName="KMModel.Store.CRM_KB_Update_ATR" />
+          <FunctionImportMapping FunctionImportName="CRM_KB_Update_BestPractice" FunctionName="KMModel.Store.CRM_KB_Update_BestPractice" />
+          <FunctionImportMapping FunctionImportName="CRM_KB_Search_ATRResults" FunctionName="KMModel.Store.CRM_KB_Search_ATRResults">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_Search_ATRResults_Result">
+                <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="GeneralCategory" ColumnName="GeneralCategory" />
+                <ScalarProperty Name="ComplaintDetails" ColumnName="ComplaintDetails" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="RootCause" ColumnName="RootCause" />
+                <ScalarProperty Name="CAShortData" ColumnName="CAShortData" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="CARNo" ColumnName="CARNo" />
+                <ScalarProperty Name="CARDetails" ColumnName="CARDetails" />
+                <ScalarProperty Name="ATRNo" ColumnName="ATRNo" />
+                <ScalarProperty Name="ATRDetails" ColumnName="ATRDetails" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_Search_BestPracticeResults" FunctionName="KMModel.Store.CRM_KB_Search_BestPracticeResults">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_Search_BestPracticeResults_Result">
+                <ScalarProperty Name="SLNO" ColumnName="SLNO" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="MonitoringSystem" ColumnName="MonitoringSystem" />
+                <ScalarProperty Name="BestPracticeSummary" ColumnName="BestPracticeSummary" />
+                <ScalarProperty Name="SOPReferenceAndVersionNo" ColumnName="SOPReferenceAndVersionNo" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_Delete_ATR_BYID" FunctionName="KMModel.Store.CRM_KB_Delete_ATR_BYID" />
+          <FunctionImportMapping FunctionImportName="CRM_KB_Delete_BestPractice_BYID" FunctionName="KMModel.Store.CRM_KB_Delete_BestPractice_BYID" />
+          <FunctionImportMapping FunctionImportName="CRM_KB_Get_ATR_BYID" FunctionName="KMModel.Store.CRM_KB_Get_ATR_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_Get_ATR_BYID_Result">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="GeneralCategory" ColumnName="GeneralCategory" />
+                <ScalarProperty Name="ComplaintDetails" ColumnName="ComplaintDetails" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="RootCause" ColumnName="RootCause" />
+                <ScalarProperty Name="CAShortData" ColumnName="CAShortData" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="CARNo" ColumnName="CARNo" />
+                <ScalarProperty Name="CARDetails" ColumnName="CARDetails" />
+                <ScalarProperty Name="ATRNo" ColumnName="ATRNo" />
+                <ScalarProperty Name="ATRDetails" ColumnName="ATRDetails" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_Get_BestPractice_BYID" FunctionName="KMModel.Store.CRM_KB_Get_BestPractice_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KMModel.CRM_KB_Get_BestPractice_BYID_Result">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="SearchTag" ColumnName="SearchTag" />
+                <ScalarProperty Name="MonitoringSystem" ColumnName="MonitoringSystem" />
+                <ScalarProperty Name="BestPracticeSummary" ColumnName="BestPracticeSummary" />
+                <ScalarProperty Name="SOPReferenceAndVersionNo" ColumnName="SOPReferenceAndVersionNo" />
+                <ScalarProperty Name="BenefitAchieved" ColumnName="BenefitAchieved" />
+                <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+                <ScalarProperty Name="PreparedDate" ColumnName="PreparedDate" />
+                <ScalarProperty Name="ApprovedBY" ColumnName="ApprovedBY" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CRM_KB_Insert_ATR" FunctionName="KMModel.Store.CRM_KB_Insert_ATR" />
+          <FunctionImportMapping FunctionImportName="CRM_KB_Insert_BestPractice" FunctionName="KMModel.Store.CRM_KB_Insert_BestPractice" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model" ZoomLevel="114" >
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

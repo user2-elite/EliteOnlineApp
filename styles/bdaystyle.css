@@ -1,0 +1,40 @@
+﻿ .box {
+    background-color: #ffffff;
+    color: #888888;
+    min-height: 300px;
+    left: 100%;
+    padding: 20px;
+    position: fixed;
+    right: 30%;
+    top: 15%;
+    width: 50%;
+    min-width: 50%;
+    z-index: 100000;
+	border:8px solid #FA5858;
+	border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+.overlay {
+    background: #000000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+	opacity:0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+a.boxclose {
+    background: url("../Images/close.png") repeat scroll left top transparent;
+    cursor: pointer;
+    float: right;
+    height: 26px;
+    left: 32px;
+    position: relative;
+    top: -17px;
+	left:14px;
+    width: 26px;
+}

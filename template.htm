@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>    
+</head>
+<body style="font-size:8px">
+    <h2 style="text-align:center">[companyunit]</h2>
+    <br />
+    <table cellpadding="5" cellspacing="0" border="1" width="100%">
+        <tr>
+            <td colspan="4">
+            <table cellpadding="3" width="100%" border="0">
+            <tr><td>Name: [name]</td><td>Pay Period: [payperiod]</td></tr>
+            <tr><td>Personnel No: [empcode]</td><td>Bank: [bank]</td></tr>
+            <tr><td>Designation: [designation]</td><td>Account Number: [accno]</td></tr>
+            </table></td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="top">
+                <b>Earnings</b></td>
+            <td colspan="2" valign="top">
+                <b>Deductions</b></td>
+        </tr>
+        <tr>
+            <td valign="top">
+                Basic   
+                <br />HRA
+                <br />lblTA
+                <br />lblTS
+                <br />lblSpecialAllowance
+                <br />lblArrears
+                <br /></td>
+            <td valign="top">
+                [basic]
+                  <br />[hra]
+                <br />[TA]
+                <br />[TS]
+                <br />[SpecialAllowance]
+                <br />[Arrears]
+                <br />
+                <br />
+                <br /></td>
+            <td valign="top">
+                Ee PF contribution
+                <br />lblESI
+                <br />lblFestivalAdvance
+                <br />lblSalaryAdvance
+                <br />lblProfessionalTax
+                <br />lblTozhilaliKshemaNidhi
+                <br />lblLWF
+                <br />lblTDS
+                <br />lblLIC
+                <br />lbl1LWF
+                <br /></td>
+            <td valign="top">
+                [pfdeductions]
+                  <br />[ESI]
+                <br />[FestivalAdvance]
+                <br />[SalaryAdvance]
+                <br />[ProfessionalTax]
+                <br />[TozhilaliKshemaNidhi]
+                <br />[LWF]
+                <br />[TDS]
+                <br />[LIC]
+                <br />[1LWF]
+                <br /></td>
+        </tr>
+
+
+        <tr>
+            <td valign="top">
+                <b>Total</b></td>
+            <td valign="top">
+                <b>[totalearning]</b></td>
+            <td>
+                &nbsp;</td>
+            <td valign="top">
+                <b>[totaldeductions]</b></td>
+        </tr>
+        <tr>
+            <td colspan="4" valign="top"><B>Net Pay: [netpay]</B></td>
+        </tr>
+                <!--<tr>
+            <td colspan="4" valign="top">Claims: [claims]</td>
+        </tr>-->
+            <tr>
+            <td colspan="4" valign="top"><b>Leave Details</b></td>
+        </tr>
+        <tr>
+            <td colspan="4" valign="top">
+              <table cellpadding="3" width="100%" border="0">
+            <tr><td>Leave Type</td><td>Op.Bal.</td><td>Leave Taken</td><td>Balance</td></tr>
+            <tr><td>Casual Leave</td><td>[clOpen]</td><td>[clTaken]</td><td>[clBalance]</td></tr>
+            <tr><td>Earned Leave</td><td>[elOpen]</td><td>[elTaken]</td><td>[elBalance]</td></tr>
+            <tr><td>Sick Leave</td><td>[slOpen]</td><td>[slTaken]</td><td>[slBalance]</td></tr>
+            <tr><td>ESI Leave</td><td>[esiOpen]</td><td>[esiTaken]</td><td>[esiBalance]</td></tr>
+            <tr><td>LOP (Full Day Leave)</td><td>[lopFOpen]</td><td>[lopFTaken]</td><td>[lopFBalance]</td></tr>
+            <tr><td>LOP (Half Day Leave)</td><td>[lopHOpen]</td><td>[lopHTaken]</td><td>[lopHBalance]</td></tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

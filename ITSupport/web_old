@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+    Note: As an alternative to hand editing this file you can use the 
+    web admin tool to configure settings for your application. Use
+    the Website->Asp.Net Configuration option in Visual Studio.
+    A full list of settings and comments can be found in 
+    machine.config.comments usually located in 
+    \Windows\Microsoft.Net\Framework\vx.x\Config 
+-->
+<configuration>
+<system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <remove name="ChartImageHandler" />
+      <add name="ChartImageHandler" preCondition="integratedMode" verb="GET,HEAD,POST"
+        path="ChartImg.axd" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    </handlers>
+  </system.webServer>
+  <appSettings>
+<!--<add key="ChartImageHandler" value="storage=file;timeout=20;" />-->
+<add key="ChartImageHandler" value="storage=memory;deleteAfterServicing=true;"/>
+    <add key="ConnString" value="Data Source=.;Initial Catalog=EliteDB;User ID=Enterprise; password=Le0p0wer@1;pooling=true;Max Pool Size=500;" />
+    <!--<add key="ConnString" value="Data Source=216.150.76.26,4433;Initial Catalog=EliteDB;User ID=Enterprise; password=Le0p0wer@1"/>
+    <add key="ConnString" value="Data Source=LPZ-JMOHAN01\SQLEXPRESS;Initial Catalog=TestDB;User ID=user2; password=user2"/>
+    <add key="ConnString" value="Data Source=206.225.85.212\SQLEXPRESS;Initial Catalog=ITSupport;User ID=eliteuser; password=Le0p0wer@1"/>-->
+  </appSettings>
+  <connectionStrings>
+    <remove name="LocalSqlServer" />
+    <add name="HelpDesk" connectionString="Data Source=.;Initial Catalog=EliteDBOld;User ID=sa; password=123;pooling=true;Max Pool Size=500;" />
+  </connectionStrings>
+  <system.web>
+	  <!--<trust level = "Full" /> -->
+    <!-- 
+            Set compilation debug="true" to insert debugging 
+            symbols into the compiled page. Because this 
+            affects performance, set this value to true only 
+            during development.
+        -->
+ <!--
+    <machineKey validationKey="288E52A3AC136EB5E10A9623F13FA7976BBE507B832486989C18D2C88630FCD7F5334D7A5902019A90EB74A43E92BFA8CE55AED558AB24DA5EEAC8A226FBC304" 
+
+
+decryptionKey="54CE44AFCDCEDB4349C062A68E5BBA1FE0EE8CC0AF4FE220A62DA590FF4D680E" validation="SHA1" decryption="AES" />
+-->
+    <compilation debug="false" targetFramework="4.5">
+      <assemblies>
+        <add assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      </assemblies>
+    </compilation>
+
+    <httpHandlers>
+      <add path="ChartImg.axd" verb="GET,HEAD,POST" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+        validate="false" />
+    </httpHandlers>
+    <!--
+          The <authentication> section enables configuration 
+          of the security authentication mode used by 
+          ASP.NET to identify an incoming user. 
+        -->
+    <!--
+           The <customErrors> section enables configuration 
+           of what to do if/when an unhandled error occurs 
+           during the execution of a request. SpecifiRequesty, 
+           it enables developers to configure html error pages 
+           to be displayed in place of a error stack trace.
+
+	<customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+             <error statusCode="403" redirect="NoAccess.htm" />
+             <error statusCode="404" redirect="FileNotFound.htm" />
+           </customErrors>
+-->
+    <customErrors mode="Off">
+    </customErrors>
+    <pages controlRenderingCompatibilityVersion="4.5" clientIDMode="AutoID" enableViewStateMac="true" />
+    <sessionState timeout="600" />
+  </system.web>
+  <!-- 
+        The system.webServer section is required for running ASP.NET AJAX under Internet
+        Information Services 7.0.  It is not necessary for previous version of IIS.
+    -->
+
+</configuration>

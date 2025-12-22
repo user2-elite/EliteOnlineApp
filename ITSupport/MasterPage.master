@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="styles/layout.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+<div id="CssLogo">
+    <img src="Images/left.jpg" width="238" height="752"/>
+</div>
+<div id="CssMenu1"></div>
+<div id="CssTitle">IT Support Desk</div>  
+ <div id="contentBG">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+
+<asp:Panel id="PanelAdmin" runat="server" visible="false">
+<DIV style="position:absolute; left:70px; top:200px;" id="CssMenu2">
+    <asp:HyperLink NavigateUrl="~/Home.aspx" runat="server" ID="lnkHome" Text="Home"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/ViewAllRequests.aspx?viewtype=3" runat="server" ID="lnkMyReq" Text="View My Assigned Requests"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/ViewAllRequests.aspx" runat="server" ID="lnkAllReq" Text="View All Pending Requests"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/NewUser.aspx" runat="server" ID="lnkNewUser" Text="Create New User" Enabled="false"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/ViewAllUsers.aspx" runat="server" ID="lnkAllusers" Text="View All Users" Enabled="false"></asp:HyperLink>        
+    <asp:HyperLink NavigateUrl="~/admin_Category.aspx" runat="server" ID="lnkCategory" Text="Manage Group" Enabled="false"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/admin_SubCategory.aspx" runat="server" ID="lnkSubCtegory" Text="Manage Category" Enabled="false"></asp:HyperLink>    
+    <asp:HyperLink NavigateUrl="~/admin_Severity.aspx" runat="server" ID="lnkPriority" Text="Severity Settings" Enabled="false"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/admin_AssignRole.aspx" runat="server" ID="lnkAssignRole" Text="Role Settings" Enabled="false"></asp:HyperLink>       
+        <asp:HyperLink NavigateUrl="~/AssetMaster.aspx" runat="server" ID="lnkAssetMaster" Text="Manage Assets" Enabled="false"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/MaintenanceActivities.aspx" runat="server" ID="lnkViewActivites" Text="Maintenance Activities" Enabled="false"></asp:HyperLink>                 
+    <asp:HyperLink NavigateUrl="~/Reports.aspx" runat="server" ID="lnkReports" Text="Reports" Enabled="false" Target="_blank"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/Dashboard.aspx" runat="server" ID="lnkDashBoard" Text="Dash Boards" Enabled="false" Target="_blank"></asp:HyperLink>                        
+</DIV>
+</asp:Panel>
+    </form>
+</body>
+</html>
+<%--
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+     <link href="styles/layout.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+--%>

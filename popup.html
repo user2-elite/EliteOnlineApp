@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/yamm.css" rel="stylesheet">
+    <!-- custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <style>
+       
+        .hide {
+            display: none;
+        }
+        .popup-wrapper {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px #aaa;
+            overflow: hidden;
+			font-family: Helvetica, Arial, sans-serif;
+            background-color: #fefefe;
+ position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+        }
+        .popup-title {
+            padding: 10px 15px;
+            background-color: #FF4D4D;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .popup-title h3 {
+            margin: 0;
+            line-height: 1.5em;
+            color: #FFFFFF;
+        }
+        .popup-body {
+            padding: 10px 15px;
+            color: #555;
+        }
+        .popup-close {
+            float: right;
+            margin-top: 2px;
+            padding: 0;
+            font-size: 26px;
+            line-height: 1;
+            border: 0;
+            background: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .popup-close:hover {
+            color: #333;
+        }      
+    </style>
+	
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+-->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+
+
+</head>
+<body>
+ 
+				<div id="AddMeeting" class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="popup-title">
+                                <button id="close1" type="button" class="popup-close">&times;</button>
+                                <h3>Add New Meeting</h3>
+                            </div>
+                            <div class="popup-body">
+                                <p>Text contents</p>
+                            </div>
+                        </div>
+                    </div>
+					
+						<div id="ViewMeeting" class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="popup-title">
+                                <button id="close2" type="button" class="popup-close">&times;</button>
+                                <h3>View/Update Meeting</h3>
+                            </div>
+                            <div class="popup-body">
+                                <p>Text contents 2</p>
+                            </div>
+                        </div>
+                    </div>
+					    <button type="button" id="LnkNewMeeting" class="btn btn-mid">Open</button>                      
+	<button type="button" id="LnkViewMeeting" class="btn btn-mid">Open 2</button>  
+	
+	
+	<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to save changes you made to document before closing?</p>
+                <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>-->
+    <script src="simple-popup/simple-popup.js"></script>
+    <script>
+	HidePopup();
+	function showAddMeetingPopup()
+	{
+		document.getElementById("AddMeeting").style.visibility = "visible";
+		document.getElementById("AddMeeting").style.width = "400px";
+		document.getElementById("AddMeeting").style.height = "500px";
+	}
+	function showViewMeetingPopup()
+	{
+		document.getElementById("ViewMeeting").style.visibility = "visible";
+		document.getElementById("ViewMeeting").style.width = "400px";
+		document.getElementById("ViewMeeting").style.height = "300px";
+	}
+	function HidePopup()
+	{
+		document.getElementById("AddMeeting").style.visibility = "hidden";
+		document.getElementById("ViewMeeting").style.visibility = "hidden";
+	}
+	
+		var LnkNewMeeting = document.getElementById('LnkNewMeeting');
+		var LnkViewMeeting = document.getElementById('LnkViewMeeting');
+		var close1 = document.getElementById('close1');
+		var close2 = document.getElementById('close2');
+		
+        //var close = document.getElementById('close');
+		close1.onclick = function() {
+            HidePopup();
+        };
+		close2.onclick = function() {
+            HidePopup();
+        };
+		
+        LnkNewMeeting.onclick = function() {
+				HidePopup();
+            	showAddMeetingPopup();
+        };
+				
+        LnkViewMeeting.onclick = function() {
+			HidePopup();		
+            showViewMeetingPopup();
+        };			
+		
+        /*var popupEl = document.getElementById('AddMeeting'); 
+		   var popupE2 = document.getElementById('ViewMeeting'); 
+
+        // As a native plugin
+        var popupAddMeeting = new Popup(popupEl, {
+            width: 700,
+            height: 500
+        });
+
+		  var popupViewMeeting = new Popup(popupE2, {
+            width: 700,
+            height: 500
+        });
+        // As a jQuery plugin
+        // var popup = $('#popup').popup({
+        //     width: 400,
+        //     height: 300
+        // });
+
+        var LnkNewMeeting = document.getElementById('LnkNewMeeting');
+		var LnkViewMeeting = document.getElementById('LnkViewMeeting');
+		var close2 = document.getElementById('close2');
+		
+        //var close = document.getElementById('close');
+		close2.onclick = function() {
+            popupViewMeeting.close();
+        };
+		
+        LnkNewMeeting.onclick = function() {
+            popupAddMeeting.open();
+        };
+		
+		
+        LnkViewMeeting.onclick = function() {
+            popupViewMeeting.open();
+        };
+*/
+        /*close.onclick = function() {
+            popup.close();
+        };*/
+		
+    </script>
+</body>
+</html>

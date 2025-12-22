@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       
+        .hide {
+            display: none;
+        }
+        .popup-wrapper {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px #aaa;
+            overflow: hidden;
+			font-family: Helvetica, Arial, sans-serif;
+            background-color: #fefefe;
+        }
+        .popup-title {
+            padding: 10px 15px;
+            background-color: #FF4D4D;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .popup-title h3 {
+            margin: 0;
+            line-height: 1.5em;
+            color: #FFFFFF;
+        }
+        .popup-body {
+            padding: 10px 15px;
+            color: #555;
+        }
+        .popup-close {
+            float: right;
+            margin-top: 2px;
+            padding: 0;
+            font-size: 26px;
+            line-height: 1;
+            border: 0;
+            background: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .popup-close:hover {
+            color: #333;
+        }      
+    </style>
+</head>
+<body>
+    <button type="button" id="LnkNewMeeting" class="btn btn-mid">Open</button>                      
+	<button type="button" id="LnkViewMeeting" class="btn btn-mid">Open 2</button>   
+				<div id="AddMeeting" class="popup-wrapper hide">
+                        <div class="popup-content">
+                            <div class="popup-title">
+                                <button type="button" class="popup-close">&times;</button>
+                                <h3>Add New Meeting</h3>
+                            </div>
+                            <div class="popup-body">
+                                <p>Text contents</p>
+                            </div>
+                        </div>
+                    </div>
+					
+						<div id="ViewMeeting" class="popup-wrapper hide">
+                        <div class="popup-content">
+                            <div class="popup-title">
+                                <button id="close2" type="button" class="popup-close">&times;</button>
+                                <h3>View/Update Meeting</h3>
+                            </div>
+                            <div class="popup-body">
+                                <p>Text contents 2</p>
+                            </div>
+                        </div>
+                    </div>					    
+    <script src="simple-popup/simple-popup.js"></script>
+    <script>
+        var popupEl = document.getElementById('AddMeeting'); 
+		   var popupE2 = document.getElementById('ViewMeeting'); 
+
+        // As a native plugin
+        var popupAddMeeting = new Popup(popupEl, {
+            width: 700,
+            height: 500
+        });
+
+		  var popupViewMeeting = new Popup(popupE2, {
+            width: 700,
+            height: 500
+        });
+        // As a jQuery plugin
+        // var popup = $('#popup').popup({
+        //     width: 400,
+        //     height: 300
+        // });
+
+        var LnkNewMeeting = document.getElementById('LnkNewMeeting');
+		var LnkViewMeeting = document.getElementById('LnkViewMeeting');
+		var close2 = document.getElementById('close2');
+		
+        //var close = document.getElementById('close');
+		close2.onclick = function() {
+            popupViewMeeting.close();
+        };
+		
+        LnkNewMeeting.onclick = function() {
+            popupAddMeeting.open();
+        };
+		
+		
+        LnkViewMeeting.onclick = function() {
+            popupViewMeeting.open();
+        };
+
+        /*close.onclick = function() {
+            popup.close();
+        };*/
+    </script>
+</body>
+</html>

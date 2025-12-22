@@ -1,0 +1,38 @@
+A:link {text-decoration: none}
+A:link {color: navy}
+A:visited{text-decoration:none}
+A:visited {color: navy}
+A:active{text-decoration:none}
+A:active{color: navy}
+a:hover{text-decoration:underline}
+a:hover{color:blue}
+.month {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; FONT-SIZE: 8pt; BORDER-LEFT: 1px inset; COLOR: #3399ff; BORDER-BOTTOM: 1px inset; FONT-FAMILY: Calibri; BACKGROUND-COLOR: #ffffff
+}
+.calbg {
+	FONT-FAMILY: Calibri; BACKGROUND-COLOR: #FFFFFF
+}
+.dayNames {
+	FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Calibri; HEIGHT: 16px; BACKGROUND-COLOR: maroon
+}
+.day {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 8pt; BORDER-LEFT: 1px outset; COLOR: #000000; BORDER-BOTTOM: 1px outset; FONT-FAMILY: Calibri; HEIGHT: 16px; BACKGROUND-COLOR: #ffffff
+}
+.today {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Calibri; HEIGHT: 16px
+}
+.cday {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 8pt; BORDER-LEFT: 1px outset; COLOR: #000000; BORDER-BOTTOM: 1px outset; FONT-FAMILY: Calibri; HEIGHT: 16px; BACKGROUND-COLOR: #FF0000
+}
+.linkbold {
+	FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.linknormal {
+	TEXT-DECORATION: none
+}
+.nwday {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 8pt; BORDER-LEFT: 1px outset; COLOR: #000000; BORDER-BOTTOM: 1px outset; FONT-FAMILY: Calibri; HEIGHT: 16px; BACKGROUND-COLOR: #b9b9bb
+}
+.nwDayNames {
+	FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Calibri; HEIGHT: 16px; BACKGROUND-COLOR: #AAAAAA;
+}

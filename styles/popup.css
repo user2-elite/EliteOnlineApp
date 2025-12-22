@@ -1,0 +1,49 @@
+﻿        .hide
+        {
+            display: none;
+        }
+        .popup-wrapper
+        {
+            background-color: #EEEEEE;
+            border: 0px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px #aaa;
+            overflow: hidden;
+            font-family: Helvetica, Arial, sans-serif;
+            position: absolute;
+            top: 5px;
+            left: 50px;
+            z-index: 1000;
+        }
+        .popup-title
+        {
+            padding: 10px 15px;
+            background-color: #FF4D4D;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .popup-title h4
+        {
+            margin: 0;
+            line-height: 1.5em;
+            color: #FFFFFF;
+        }
+        .popup-body
+        {
+            padding: 0px 0px;
+        }
+        .popup-close
+        {
+            float: right;
+            margin-top: 2px;
+            padding: 0;
+            font-size: 26px;
+            line-height: 1;
+            border: 0;
+            background: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .popup-close:hover
+        {
+            color: #333;
+        }

@@ -1,0 +1,29 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ODMaster.master" AutoEventWireup="true" CodeFile="Request.aspx.cs" Inherits="OD_Request" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <iframe width="125%" height="950px" frameborder="0" scrolling="no" src="ODPage.aspx" id="odIframe" onload="setIframeHeight(this.id)"></iframe>
+     <script type="text/javascript">
+         //parent.document.getElementById('leaveIFrame').style.height = eval(document['body'].offsetHeight) + 400 + 'px';
+
+         function setIframeHeight(id) {
+             var ifrm = document.getElementById(id);
+             var doc = ifrm.contentDocument ? ifrm.contentDocument :
+        ifrm.contentWindow.document;
+             ifrm.style.visibility = 'hidden';
+             ifrm.style.height = "10px"; // reset to minimal height ...
+             // IE opt. for bing/msn needs a bit added or scrollbar appears
+             ifrm.style.height = getDocHeight(doc) + 100 + "px";
+             ifrm.style.visibility = 'visible';
+         }
+
+         function getDocHeight(doc) {
+             doc = doc || document;
+             // stackoverflow.com/questions/1145850/
+             var body = doc.body, html = doc.documentElement;
+             var height = Math.max(body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight);
+             return height;
+         }
+</script>
+</asp:Content>
+

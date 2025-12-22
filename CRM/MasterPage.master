@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Complaint Log system</title>
+    <link href="styles/layout.css" rel="stylesheet" type="text/css" /> 
+    <link href="MessageBox/messagebox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/pure-min.css">    
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form id="form1" runat="server" class="pure-form pure-form-stacked">
+<div id="CssLogo">
+    <img src="Images/left.jpg" width="238" height="752"/>
+</div>
+<div id="CssMenu1"></div>
+<div id="CssTitle">Complaint Log System</div>  
+ <div id="contentBG">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+<asp:Panel id="PanelAdmin" runat="server" visible="false">
+<DIV style="position:absolute; left:70px; top:200px;" id="CssMenu2">
+    <asp:HyperLink NavigateUrl="~/Home.aspx" runat="server" ID="lnkHome" Text="Home"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/ComplaintRegister.aspx" runat="server" ID="lnkRegister" Text="Complaint Register"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/ListComplaint.aspx" runat="server" ID="lnkListComp" Text="View Complaint Logs"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/admin_Units.aspx" runat="server" ID="lnkUnitMapping" Text="Add Company Units"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/admin_ProdCategory.aspx" runat="server" ID="lnkProducts" Text="Add Product Category"></asp:HyperLink>    
+    <asp:HyperLink NavigateUrl="~/admin_CompTypes.aspx" runat="server" ID="lnkCompTypes" Text="Add Complaint Types"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/admin_AssignRole.aspx" runat="server" ID="lnkAssignRole" Text="Role Settings"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/KBView.aspx" runat="server" ID="lnkKBView" Text="Knowledge Management"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/Reports.aspx" runat="server" ID="lnkReports" Text="Reports" Target="_blank"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/Dashboards.aspx" runat="server" ID="lnkDashboard" Text="Dashboards" Target="_blank"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/ChangePassword.aspx" runat="server" ID="lnkChangePassword" Text="Change Password"></asp:HyperLink>                        
+    <asp:HyperLink NavigateUrl="~/LogOff.aspx" runat="server" ID="lnkLogOff" Text="Log Off"></asp:HyperLink>                        
+
+</DIV>
+</asp:Panel>
+    </form>
+</body>
+</html>
+<%--
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+     <link href="styles/layout.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+--%>

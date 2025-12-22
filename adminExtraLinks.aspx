@@ -1,0 +1,127 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeFile="adminExtraLinks.aspx.cs" Inherits="adminExtraLinks" ValidateRequest="false" Trace="false"%>
+<%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%--<%@ register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <style type="text/css">
+        .custom-date-style
+        {
+            background-color: red !important;
+        }
+    </style>
+     <script language="javascript">
+         function confDelete() {
+             if (window.confirm("Click on 'Ok' button to confirm delete")) {
+                 return true;
+             }
+             else {
+                 return false;
+             }
+         }    
+    </script>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <h3>Extra Links </h3>
+    <p>Add/Update additional links here. New links will be appeared on the home page. This screen always update the latest contents, hence history will not be maintained.</p>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <fieldset>
+    <div>
+        <div class="pure-form pure-form-stacked" style="width: 100%; margin: 0px; padding: 10px;
+            border: 0px;">
+            <div class="pure-g">          
+               <div class="pure-u-1 pure-u-md-1-1">
+                        Link Text (Maximum 20 Characters. This text will show as a link on the left side of the home page)<br />
+                        <asp:TextBox ID="txtName" runat="server" Width="525px" MaxLength="20"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="txtName"
+                            ErrorMessage="Required" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>      
+                       <div class="pure-u-1 pure-u-md-1-1">
+                        Page Title (Maximum 50 Characters)<br />
+                        <asp:TextBox ID="txtTitle" runat="server" Width="525px" MaxLength="50"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTitle"
+                            ErrorMessage="Required" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>
+                  <div class="pure-u-1 pure-u-md-1-1">
+                    Page Content
+                    <br />
+<!--
+	toolbarlayout="Bold,Italic,Underline,Strikethrough,Superscript,Subscript,RemoveFormat|BulletedList,NumberedList|Cut,Copy,Paste,Delete;Undo,Redo,Print|InsertTable" 
+-->
+<FTB:FreeTextBox id="txtDetails"
+            runat="Server" EnableHtmlMode="false" BackColor="#FFFFFF" Height="350" Width="700" />                   
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDetails"
+                                        ErrorMessage="Required" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                  </div>
+
+                    <div class="pure-u-1 pure-u-md-1-1">
+                                    <br />
+                                    <div style="position: absolute; width: 800px; left: 200px;">
+                                        <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="true" DisplayAfter="1"
+                                            AssociatedUpdatePanelID="UpdatePanel1">
+                                            <ProgressTemplate>
+                                                <img border="0" src="Images/progress1.gif" />
+                                            </ProgressTemplate>
+                                        </asp:UpdateProgress>
+                                        <div class="alert-box success" id="divSuccess" runat="server">
+                                        </div>
+                                        <div class="alert-box warning" id="divAlert" runat="server">
+                                        </div>
+                                        <div class="alert-box notice" id="divNotice" runat="server">
+                                        </div>
+                                        <div class="alert-box error" id="diverror" runat="server">
+                                        </div>
+                                    </div>
+                                    <asp:Button ID="btnSubmit" runat="server" Text="Save Details" class="btn btn-success"
+                                        OnClick="btnSubmit_Click" />
+                                </div>
+            </div>
+        </div>
+            <asp:Panel runat="server" ID="pnlList">
+                        <br />
+                        <h4>
+                            View Already Saved Data</h4>
+                        <hr width="100%; height:1px" />
+                        <div class="alert-box success" id="divListSuccess" runat="server">
+                        </div>
+                        <div class="alert-box error" id="divListError" runat="server">
+                        </div>
+                        <div class="pure-u-1">
+                            <asp:DataGrid ID="grid1" runat="server" AutoGenerateColumns="False" CellPadding="4"
+                                Font-Bold="False" Font-Size="Small" ForeColor="#333333" GridLines="None" OnItemCommand="grid1_ItemCommand"
+                                Width="100%">
+                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <EditItemStyle BackColor="#999999" />
+                                <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                <AlternatingItemStyle BackColor="White" Font-Size="11pt" ForeColor="#284775" />
+                                <ItemStyle BackColor="#F7F6F3" Font-Size="11pt" ForeColor="#333333" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="11pt" ForeColor="White" />
+                                <Columns>
+                                    <asp:BoundColumn DataField="Page_Link_Name" HeaderText="Link Text"></asp:BoundColumn>
+                                    <asp:BoundColumn DataField="Page_Header" HeaderText="Page Title"></asp:BoundColumn>
+                                    <asp:BoundColumn DataField="Created_ON" HeaderText="Added On"></asp:BoundColumn>
+                                    <asp:BoundColumn DataField="Created_By" HeaderText="Added By"></asp:BoundColumn>
+                                    <asp:TemplateColumn HeaderText="Edit">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkEdit" runat="server" CausesValidation="false" CommandName="cmEdit"
+                                                Text="Edit" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"ID") %>'></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateColumn>
+                                    <asp:TemplateColumn HeaderText="Delete">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkDelete" runat="server" CausesValidation="false" CommandName="cmDelete"
+                                                Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"ID") %>' OnClientClick="javascript:return confDelete();"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateColumn>
+                                </Columns>
+                            </asp:DataGrid>
+                        </div>
+                        <br />
+                    </asp:Panel>
+    </div>
+      </fieldset>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>
+

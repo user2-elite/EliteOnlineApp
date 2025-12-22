@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Elite Knowledge Management System</title>
+    <link href="styles/layout.css" rel="stylesheet" type="text/css" /> 
+    <link href="MessageBox/messagebox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/pure-min.css">    
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="JQuery_Pure/pure-release-0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form id="form1" runat="server" class="pure-form pure-form-stacked">
+<div id="CssLogo">
+    <img src="Images/left.jpg" width="238" height="752"/>
+</div>
+<div id="CssMenu1"></div>
+<div id="CssTitle">Knowledge Management</div>  
+ <div id="contentBG">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+    <asp:Panel id="PanelAdmin" runat="server" visible="false">
+<div style="position:absolute; left:70px; top:200px;" id="CssMenu2">
+    <asp:HyperLink NavigateUrl="~/Search.aspx" runat="server" ID="lnkSearch" Text="Search"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/AddKB.aspx" runat="server" ID="lnkAddKB" Text="Add New CRM" Visible="False"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/AddATR.aspx" runat="server" ID="lnkAddATR" Text="Add New ATR" Visible="False"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/AddBestPractice.aspx" runat="server" ID="lnkAddBPractice" Text="Add New Best Practice" Visible="False"></asp:HyperLink>
+    <asp:HyperLink NavigateUrl="~/LogOff.aspx" runat="server" ID="lnkLogOff" Text="Log Off"></asp:HyperLink>
+</div>
+</asp:Panel>
+    </form>
+</body>
+</html>

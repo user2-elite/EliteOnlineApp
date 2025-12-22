@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="INTModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="INTModelStoreContainer" />
+        <Function Name="Conf_ADD_Participants" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cr_Main_id" Type="int" Mode="In" />
+          <Parameter Name="RecepientUID" Type="varchar" Mode="In" />
+          <Parameter Name="RecepientEmail" Type="varchar" Mode="In" />
+          <Parameter Name="added_by" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Conf_AddMeeting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cr_id" Type="int" Mode="In" />
+          <Parameter Name="UID" Type="varchar" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="conf_date" Type="datetime" Mode="In" />
+          <Parameter Name="conf_start_time" Type="datetime" Mode="In" />
+          <Parameter Name="conf_end_time" Type="datetime" Mode="In" />
+          <Parameter Name="added_by" Type="varchar" Mode="In" />
+          <Parameter Name="Meeting_description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Meeting_outcome" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Notify_participants" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Conf_CancelMeeting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cr_Main_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Conf_GetMeetingOrganizedListAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Conf_GetMyMeetingList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Conf_GetMyMeetingListAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Conf_UpdateMeeting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cr_Main_id" Type="int" Mode="In" />
+          <Parameter Name="cr_id" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="UID" Type="varchar" Mode="In" />
+          <Parameter Name="conf_date" Type="datetime" Mode="In" />
+          <Parameter Name="conf_start_time" Type="datetime" Mode="In" />
+          <Parameter Name="conf_end_time" Type="datetime" Mode="In" />
+          <Parameter Name="added_by" Type="varchar" Mode="In" />
+          <Parameter Name="Meeting_description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Meeting_outcome" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Notify_participants" Type="bit" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Delete_ExtraLinks_ByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Delete_MGMT_Talk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Delete_MGMTList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Delete_News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Delete_QuoteText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_All_ExtraLinks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_All_MGMTList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_All_News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_All_News_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_ExtraLinks_ByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_ExtraLinks_ForHome" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_MGMT_Talk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_MGMT_Talk_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_MGMTList_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_News_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_QuoteText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Get_QuoteText_BYID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Get_Travel_Schedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="INT_Insert_ExtraLinks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Page_Link_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Page_Header" Type="varchar" Mode="In" />
+          <Parameter Name="Page_Content" Type="text" Mode="In" />
+          <Parameter Name="Created_By" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Insert_MGMT_Talk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MGMT_Title" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Text" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="MGMT_Author" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Photo_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Created_By" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Insert_MGMTList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MGMT_Name" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Unit" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Desig" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Profile" Type="varchar(max)" Mode="In" />
+          <Parameter Name="MGMT_Picture_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Created_By" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_SortOrder" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Insert_News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="News_Title" Type="varchar" Mode="In" />
+          <Parameter Name="News_Text" Type="varchar(max)" Mode="In" />
+          <Parameter Name="News_Picture_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Created_By" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Insert_QuoteText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QuoteText" Type="varchar(max)" Mode="In" />
+          <Parameter Name="AddedOn" Type="datetime" Mode="In" />
+          <Parameter Name="AddedBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_ExtraLinks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Page_Link_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Page_Header" Type="varchar" Mode="In" />
+          <Parameter Name="Page_Content" Type="text" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_MGMT_Talk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="MGMT_Title" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Text" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="MGMT_Author" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Photo_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Created_By" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_MGMTList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="MGMT_Name" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Unit" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Desig" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_Profile" Type="varchar(max)" Mode="In" />
+          <Parameter Name="MGMT_Picture_Name" Type="varchar" Mode="In" />
+          <Parameter Name="MGMT_SortOrder" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="News_Title" Type="varchar" Mode="In" />
+          <Parameter Name="News_Text" Type="varchar(max)" Mode="In" />
+          <Parameter Name="News_Picture_Name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_QuoteText" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="QuoteText" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="INT_Update_Travel_Schedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Schedules" Type="varchar(max)" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="INTModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="INTModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <FunctionImport Name="INT_Delete_QuoteText">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_QuoteText" ReturnType="Collection(INTModel.INT_Get_QuoteText_Result)" />
+          <FunctionImport Name="INT_Insert_QuoteText">
+            <Parameter Name="QuoteText" Mode="In" Type="String" />
+            <Parameter Name="AddedOn" Mode="In" Type="DateTime" />
+            <Parameter Name="AddedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_AddMeeting" ReturnType="Collection(INTModel.Conf_AddMeeting_Result)">
+            <Parameter Name="cr_id" Mode="In" Type="Int32" />
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="conf_date" Mode="In" Type="DateTime" />
+            <Parameter Name="conf_start_time" Mode="In" Type="DateTime" />
+            <Parameter Name="conf_end_time" Mode="In" Type="DateTime" />
+            <Parameter Name="added_by" Mode="In" Type="String" />
+            <Parameter Name="Meeting_description" Mode="In" Type="String" />
+            <Parameter Name="Meeting_outcome" Mode="In" Type="String" />
+            <Parameter Name="Notify_participants" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_ADD_Participants">
+            <Parameter Name="cr_Main_id" Mode="In" Type="Int32" />
+            <Parameter Name="RecepientUID" Mode="In" Type="String" />
+            <Parameter Name="RecepientEmail" Mode="In" Type="String" />
+            <Parameter Name="added_by" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_UpdateMeeting" ReturnType="Collection(INTModel.Conf_UpdateMeeting_Result)">
+            <Parameter Name="cr_Main_id" Mode="In" Type="Int32" />
+            <Parameter Name="cr_id" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="UID" Mode="In" Type="String" />
+            <Parameter Name="conf_date" Mode="In" Type="DateTime" />
+            <Parameter Name="conf_start_time" Mode="In" Type="DateTime" />
+            <Parameter Name="conf_end_time" Mode="In" Type="DateTime" />
+            <Parameter Name="added_by" Mode="In" Type="String" />
+            <Parameter Name="Meeting_description" Mode="In" Type="String" />
+            <Parameter Name="Meeting_outcome" Mode="In" Type="String" />
+            <Parameter Name="Notify_participants" Mode="In" Type="Boolean" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_CancelMeeting">
+          <Parameter Name="cr_Main_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_GetMyMeetingList" ReturnType="Collection(INTModel.Conf_GetMyMeetingList_Result)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_Travel_Schedule">
+          <Parameter Name="Schedules" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_ExtraLinks">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Page_Link_Name" Mode="In" Type="String" />
+            <Parameter Name="Page_Header" Mode="In" Type="String" />
+            <Parameter Name="Page_Content" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Insert_News">
+            <Parameter Name="News_Title" Mode="In" Type="String" />
+            <Parameter Name="News_Text" Mode="In" Type="String" />
+            <Parameter Name="News_Picture_Name" Mode="In" Type="String" />
+            <Parameter Name="Created_By" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Insert_MGMT_Talk">
+            <Parameter Name="MGMT_Title" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Text" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Author" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Photo_Name" Mode="In" Type="String" />
+            <Parameter Name="Created_By" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Insert_ExtraLinks">
+            <Parameter Name="Page_Link_Name" Mode="In" Type="String" />
+            <Parameter Name="Page_Header" Mode="In" Type="String" />
+            <Parameter Name="Page_Content" Mode="In" Type="String" />
+            <Parameter Name="Created_By" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Delete_News">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Delete_MGMT_Talk">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Delete_ExtraLinks_ByID">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_All_ExtraLinks" ReturnType="Collection(INTModel.INT_Get_All_ExtraLinks_Result)" />
+          <FunctionImport Name="INT_Get_All_News" ReturnType="Collection(INTModel.INT_Get_All_News_Result)" />
+          <FunctionImport Name="INT_Get_ExtraLinks_ForHome" ReturnType="Collection(INTModel.INT_Get_ExtraLinks_ForHome_Result)" />
+          <FunctionImport Name="INT_Get_Travel_Schedule" ReturnType="Collection(INTModel.INT_Get_Travel_Schedule_Result)" />
+          <FunctionImport Name="INT_Get_News_BYID" ReturnType="Collection(INTModel.INT_Get_News_BYID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_MGMT_Talk" ReturnType="Collection(INTModel.INT_Get_MGMT_Talk_Result)" />
+          <FunctionImport Name="INT_Get_ExtraLinks_ByID" ReturnType="Collection(INTModel.INT_Get_ExtraLinks_ByID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_All_News_Admin" ReturnType="Collection(INTModel.INT_Get_All_News_Admin_Result)" />
+          <FunctionImport Name="INT_Insert_MGMTList">
+            <Parameter Name="MGMT_Name" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Unit" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Desig" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Profile" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Picture_Name" Mode="In" Type="String" />
+            <Parameter Name="Created_By" Mode="In" Type="String" />
+            <Parameter Name="MGMT_SortOrder" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Delete_MGMTList">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_All_MGMTList" ReturnType="Collection(INTModel.INT_Get_All_MGMTList_Result)" />
+          <FunctionImport Name="INT_Get_MGMTList_BYID" ReturnType="Collection(INTModel.INT_Get_MGMTList_BYID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_MGMT_Talk_BYID" ReturnType="Collection(INTModel.INT_Get_MGMT_Talk_BYID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Get_QuoteText_BYID" ReturnType="Collection(INTModel.INT_Get_QuoteText_BYID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_News">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="News_Title" Mode="In" Type="String" />
+            <Parameter Name="News_Text" Mode="In" Type="String" />
+            <Parameter Name="News_Picture_Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_QuoteText">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="QuoteText" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_MGMTList">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="MGMT_Name" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Unit" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Desig" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Profile" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Picture_Name" Mode="In" Type="String" />
+            <Parameter Name="MGMT_SortOrder" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INT_Update_MGMT_Talk">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="MGMT_Title" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Text" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Author" Mode="In" Type="String" />
+            <Parameter Name="MGMT_Photo_Name" Mode="In" Type="String" />
+            <Parameter Name="Created_By" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_GetMeetingOrganizedListAll" ReturnType="Collection(INTModel.Conf_GetMeetingOrganizedListAll_Result)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Conf_GetMyMeetingListAll" ReturnType="Collection(INTModel.Conf_GetMyMeetingListAll_Result)">
+          <Parameter Name="UID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="INT_Get_QuoteText_Result">
+          <Property Type="String" Name="QuoteText" Nullable="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="AddedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AddedBy" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Conf_AddMeeting_Result">
+          <Property Type="Int32" Name="MeetingID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Conf_UpdateMeeting_Result">
+          <Property Type="Int32" Name="MeetingID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Conf_GetMyMeetingList_Result">
+          <Property Type="Int32" Name="EventID" Nullable="false" />
+          <Property Type="String" Name="EventName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="StartDate" Nullable="false" MaxLength="19" />
+          <Property Type="String" Name="EndDate" Nullable="false" MaxLength="19" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_All_ExtraLinks_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Page_Link_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Page_Header" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Page_Content" Nullable="false" MaxLength="Max" />
+          <Property Type="DateTime" Name="Created_ON" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_All_News_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="News_Title" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="News_Picture_Name" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_ExtraLinks_ForHome_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Page_Link_Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_Latest_MGMT_Talk_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MGMT_Title" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Text" Nullable="false" />
+          <Property Type="String" Name="MGMT_Author" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Photo_Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_Travel_Schedule_Result">
+          <Property Type="String" Name="Travel_Details" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_News_BYID_Result">
+          <Property Type="String" Name="News_Title" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="News_Text" Nullable="false" />
+          <Property Type="String" Name="News_Picture_Name" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_MGMT_Talk_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MGMT_Title" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Text" Nullable="false" />
+          <Property Type="String" Name="MGMT_Author" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Photo_Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_Latest_News_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="News_Title" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_ExtraLinks_ByID_Result">
+          <Property Type="String" Name="Page_Link_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Page_Header" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Page_Content" Nullable="false" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_All_News_Admin_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="News_Title" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="News_Picture_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="News_Text" Nullable="false" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_All_MGMTList_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MGMT_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Desig" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Picture_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Profile" Nullable="false" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MGMT_Unit" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_MGMTList_BYID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MGMT_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Desig" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Picture_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Profile" Nullable="false" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="MGMT_SortOrder" Nullable="true" />
+          <Property Type="String" Name="MGMT_Unit" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_MGMT_Talk_BYID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MGMT_Title" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MGMT_Text" Nullable="false" />
+          <Property Type="String" Name="MGMT_Author" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MGMT_Photo_Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Created_By" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="INT_Get_QuoteText_BYID_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="QuoteText" Nullable="true" />
+          <Property Type="DateTime" Name="AddedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AddedBy" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Conf_GetMeetingOrganizedListAll_Result">
+          <Property Type="Int32" Name="EventID" Nullable="false" />
+          <Property Type="String" Name="EventName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="StartDate" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="EndDate" Nullable="true" MaxLength="19" />
+        </ComplexType>
+        <ComplexType Name="Conf_GetMyMeetingListAll_Result">
+          <Property Type="Int32" Name="EventID" Nullable="false" />
+          <Property Type="String" Name="EventName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="StartDate" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="EndDate" Nullable="true" MaxLength="19" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <Alias Key="Model" Value="INTModel" />
+        <Alias Key="Target" Value="INTModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="INTModelContainer" StorageEntityContainer="INTModelStoreContainer">
+          <FunctionImportMapping FunctionImportName="INT_Delete_QuoteText" FunctionName="INTModel.Store.INT_Delete_QuoteText" />
+          <FunctionImportMapping FunctionImportName="INT_Get_QuoteText" FunctionName="INTModel.Store.INT_Get_QuoteText">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_QuoteText_Result">
+                <ScalarProperty Name="QuoteText" ColumnName="QuoteText" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Insert_QuoteText" FunctionName="INTModel.Store.INT_Insert_QuoteText" />
+          <FunctionImportMapping FunctionImportName="Conf_AddMeeting" FunctionName="INTModel.Store.Conf_AddMeeting" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.Conf_AddMeeting_Result">
+                <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Conf_ADD_Participants" FunctionName="INTModel.Store.Conf_ADD_Participants" />
+          <FunctionImportMapping FunctionImportName="Conf_UpdateMeeting" FunctionName="INTModel.Store.Conf_UpdateMeeting">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.Conf_UpdateMeeting_Result">
+                <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Conf_CancelMeeting" FunctionName="INTModel.Store.Conf_CancelMeeting" />
+          <FunctionImportMapping FunctionImportName="Conf_GetMyMeetingList" FunctionName="INTModel.Store.Conf_GetMyMeetingList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.Conf_GetMyMeetingList_Result">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Update_Travel_Schedule" FunctionName="INTModel.Store.INT_Update_Travel_Schedule" />
+          <FunctionImportMapping FunctionImportName="INT_Update_ExtraLinks" FunctionName="INTModel.Store.INT_Update_ExtraLinks" />
+          <FunctionImportMapping FunctionImportName="INT_Insert_News" FunctionName="INTModel.Store.INT_Insert_News" />
+          <FunctionImportMapping FunctionImportName="INT_Insert_MGMT_Talk" FunctionName="INTModel.Store.INT_Insert_MGMT_Talk" />
+          <FunctionImportMapping FunctionImportName="INT_Insert_ExtraLinks" FunctionName="INTModel.Store.INT_Insert_ExtraLinks" />
+          <FunctionImportMapping FunctionImportName="INT_Delete_News" FunctionName="INTModel.Store.INT_Delete_News" />
+          <FunctionImportMapping FunctionImportName="INT_Delete_MGMT_Talk" FunctionName="INTModel.Store.INT_Delete_MGMT_Talk" />
+          <FunctionImportMapping FunctionImportName="INT_Delete_ExtraLinks_ByID" FunctionName="INTModel.Store.INT_Delete_ExtraLinks_ByID" />
+          <FunctionImportMapping FunctionImportName="INT_Get_All_ExtraLinks" FunctionName="INTModel.Store.INT_Get_All_ExtraLinks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_All_ExtraLinks_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Page_Link_Name" ColumnName="Page_Link_Name" />
+                <ScalarProperty Name="Page_Header" ColumnName="Page_Header" />
+                <ScalarProperty Name="Page_Content" ColumnName="Page_Content" />
+                <ScalarProperty Name="Created_ON" ColumnName="Created_ON" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_All_News" FunctionName="INTModel.Store.INT_Get_All_News">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_All_News_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+                <ScalarProperty Name="News_Picture_Name" ColumnName="News_Picture_Name" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_ExtraLinks_ForHome" FunctionName="INTModel.Store.INT_Get_ExtraLinks_ForHome">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_ExtraLinks_ForHome_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Page_Link_Name" ColumnName="Page_Link_Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_Travel_Schedule" FunctionName="INTModel.Store.INT_Get_Travel_Schedule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_Travel_Schedule_Result">
+                <ScalarProperty Name="Travel_Details" ColumnName="Travel_Details" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_News_BYID" FunctionName="INTModel.Store.INT_Get_News_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_News_BYID_Result">
+                <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+                <ScalarProperty Name="News_Text" ColumnName="News_Text" />
+                <ScalarProperty Name="News_Picture_Name" ColumnName="News_Picture_Name" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_MGMT_Talk" FunctionName="INTModel.Store.INT_Get_MGMT_Talk">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_MGMT_Talk_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MGMT_Title" ColumnName="MGMT_Title" />
+                <ScalarProperty Name="MGMT_Text" ColumnName="MGMT_Text" />
+                <ScalarProperty Name="MGMT_Author" ColumnName="MGMT_Author" />
+                <ScalarProperty Name="MGMT_Photo_Name" ColumnName="MGMT_Photo_Name" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_ExtraLinks_ByID" FunctionName="INTModel.Store.INT_Get_ExtraLinks_ByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_ExtraLinks_ByID_Result">
+                <ScalarProperty Name="Page_Link_Name" ColumnName="Page_Link_Name" />
+                <ScalarProperty Name="Page_Header" ColumnName="Page_Header" />
+                <ScalarProperty Name="Page_Content" ColumnName="Page_Content" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_All_News_Admin" FunctionName="INTModel.Store.INT_Get_All_News_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_All_News_Admin_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+                <ScalarProperty Name="News_Picture_Name" ColumnName="News_Picture_Name" />
+                <ScalarProperty Name="News_Text" ColumnName="News_Text" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Insert_MGMTList" FunctionName="INTModel.Store.INT_Insert_MGMTList" />
+          <FunctionImportMapping FunctionImportName="INT_Delete_MGMTList" FunctionName="INTModel.Store.INT_Delete_MGMTList" />
+          <FunctionImportMapping FunctionImportName="INT_Get_All_MGMTList" FunctionName="INTModel.Store.INT_Get_All_MGMTList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_All_MGMTList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MGMT_Name" ColumnName="MGMT_Name" />
+                <ScalarProperty Name="MGMT_Desig" ColumnName="MGMT_Desig" />
+                <ScalarProperty Name="MGMT_Picture_Name" ColumnName="MGMT_Picture_Name" />
+                <ScalarProperty Name="MGMT_Profile" ColumnName="MGMT_Profile" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="MGMT_Unit" ColumnName="MGMT_Unit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_MGMTList_BYID" FunctionName="INTModel.Store.INT_Get_MGMTList_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_MGMTList_BYID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MGMT_Name" ColumnName="MGMT_Name" />
+                <ScalarProperty Name="MGMT_Desig" ColumnName="MGMT_Desig" />
+                <ScalarProperty Name="MGMT_Picture_Name" ColumnName="MGMT_Picture_Name" />
+                <ScalarProperty Name="MGMT_Profile" ColumnName="MGMT_Profile" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="MGMT_SortOrder" ColumnName="MGMT_SortOrder" />
+                <ScalarProperty Name="MGMT_Unit" ColumnName="MGMT_Unit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_MGMT_Talk_BYID" FunctionName="INTModel.Store.INT_Get_MGMT_Talk_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_MGMT_Talk_BYID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MGMT_Title" ColumnName="MGMT_Title" />
+                <ScalarProperty Name="MGMT_Text" ColumnName="MGMT_Text" />
+                <ScalarProperty Name="MGMT_Author" ColumnName="MGMT_Author" />
+                <ScalarProperty Name="MGMT_Photo_Name" ColumnName="MGMT_Photo_Name" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Get_QuoteText_BYID" FunctionName="INTModel.Store.INT_Get_QuoteText_BYID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.INT_Get_QuoteText_BYID_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QuoteText" ColumnName="QuoteText" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INT_Update_News" FunctionName="INTModel.Store.INT_Update_News" />
+          <FunctionImportMapping FunctionImportName="INT_Update_QuoteText" FunctionName="INTModel.Store.INT_Update_QuoteText" />
+          <FunctionImportMapping FunctionImportName="INT_Update_MGMTList" FunctionName="INTModel.Store.INT_Update_MGMTList" />
+          <FunctionImportMapping FunctionImportName="INT_Update_MGMT_Talk" FunctionName="INTModel.Store.INT_Update_MGMT_Talk" />
+          <FunctionImportMapping FunctionImportName="Conf_GetMeetingOrganizedListAll" FunctionName="INTModel.Store.Conf_GetMeetingOrganizedListAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.Conf_GetMeetingOrganizedListAll_Result">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Conf_GetMyMeetingListAll" FunctionName="INTModel.Store.Conf_GetMyMeetingListAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTModel.Conf_GetMyMeetingListAll_Result">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="INTModel" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx" />
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

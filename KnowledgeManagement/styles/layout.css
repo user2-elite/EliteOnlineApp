@@ -1,0 +1,194 @@
+﻿/* CSS Document */
+body, html {
+	margin: 0px 0px 0px 0px;
+	font-family:Calibri,Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	font-size: 13px;
+}
+
+#contentBG
+{
+	 position:absolute;
+	 left:250px;
+	 top:30px;
+	 width:1000px;
+	 min-width:900px;
+	 min-height:430px;
+	 z-index:3;
+	 vertical-align:top;
+	 border: 1px solid #B94629;		 
+	 padding: 15px 15px 15px 15px;
+}
+
+#PopupcontentBG
+{
+	 position:absolute;
+	 left:20px;
+	 top:20px;
+	 right:1px;
+	 bottom:1px;
+	 vertical-align:top;
+	 font-size: 15px;
+}
+
+#footer 
+{
+	clear: both;
+	width:1000px;
+	height:28px;
+   background-color: #395AA8;
+}
+
+#CssLogo
+{
+   border: 0px;
+   position:absolute;
+   top:0px;
+   left:0px;
+   z-index:0;
+}
+
+#CssTitle
+{
+   border: 0px;
+   position:absolute;
+   top:0px;
+   left:1000px;
+   z-index:0;
+   font-size:23px;
+   font-family:@Japanese Gothic;
+   font-weight: bold;  
+   color: #B94629;
+   letter-spacing:1px; 
+}
+
+#CssMenu1
+{
+   border: 0px #D0D0D0 solid;
+   background-color: transparent;
+   position:absolute;
+   top:3px;
+   width :650px;
+   height:28px;
+   z-index:3;
+  left:400px;
+}
+#CssMenu1 ul
+{
+   list-style-type: none;
+   padding: 0;
+}
+#CssMenu1 li
+{
+   float: left;
+   margin: 0;
+   padding: 0px 4px 0px 0px;
+}
+
+#CssMenu1_Right
+{
+   float: left;
+   margin: 0;
+   padding: 0px 0px 0px 0px;
+}
+
+#CssMenu1 a
+{
+   display: block;
+   float: left;
+   color: #FFFFFF;
+   background-color: #CB8C1D;
+   background-image: none;
+   text-decoration: none;
+   width: 195px;
+   vertical-align: middle;
+   line-height: 28px;
+   text-align: center;
+   border: 1px #FFFFFF solid;
+}
+
+#CssMenu1 li:hover a, #CssMenu1 a:hover
+{
+   color: #000000;
+   background-color:#E89F65;
+}
+
+#CssMenu2
+{
+   border: 0px #D0D0D0 solid;
+   background-color: transparent;
+   width :170px;
+   height:35px;
+   z-index:3;
+   font-size: 16px;
+}
+
+#CssMenu2 ul
+{
+   list-style-type: none;
+   padding: 0;
+}
+#CssMenu2 li
+{
+   float: left;
+   margin: 0;
+   padding: 0px 4px 0px 0px;
+}
+
+#CssMenu2_Right
+{
+   float: left;
+   margin: 0;
+   padding: 0px 0px 0px 0px;
+}
+
+#CssMenu2 a
+{
+   display: block;
+   float: left;
+   color: #FFFFFF;
+   background-color: #CB8C1D;
+   text-decoration: none;
+   width: 170px;
+   vertical-align: middle;
+   line-height: 28px;
+   text-align: center;
+   border: 1px #FFFFFF solid;
+}
+
+#CssMenu2 li:hover a, #CssMenu2 a:hover
+{
+   color: #FFFFFF;
+   background-color:#E89F65;
+   background-image: none;
+}
+
+#spnProgress
+{
+  border: 0px;
+   position:absolute;
+   top:200px;
+   left:450px;
+   z-index:0;
+}
+
+.GridPageNum a
+{
+   display: block;
+   float: left;
+   text-decoration: none;
+   width: 25px;
+   vertical-align: middle;
+   line-height: 28px;
+   text-align: center;
+   font-family: verdana;
+   background-color: #CB8C1D;Color:#FFFFFF; Font-Size:13px;
+}
+
+.GridPageNum a:hover
+{
+   color: #000000;
+   background-color:#E89F65;
+   font-family: verdana;
+   Font-Size:13px;
+}

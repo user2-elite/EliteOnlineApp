@@ -217,7 +217,7 @@ public partial class ApprovePage : System.Web.UI.Page
         }
         if (NotApprovedCount > 0)
         {
-            lblMessage.Text += "Some requests not approved since number of days requested exceeds the quata limit. Please reject those leave(s) and request employee to create new using other leave type.";
+            lblMessage.Text += "“Some requests were not approved because the number of days requested exceeds the quota limit. Please reject those leave(s) and ask the employee to submit a new request using another leave type.";
         }
 
         if (ApprovedCount > 0)
@@ -228,7 +228,7 @@ public partial class ApprovePage : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please select a leave request and proceed.";
+            lblMessage.Text = "Some requests were not approved, either because the checkbox(es) were not ticked, or you may need to click 'View Details' to try again and see the exact error.";
             lblMessage.ForeColor = System.Drawing.Color.Blue;
         }
 

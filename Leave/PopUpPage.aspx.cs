@@ -18,6 +18,7 @@ public partial class PopUpPage : System.Web.UI.Page
             ViewState["Requeststatus"] = "";
             ViewState["Code"] = Request["Code"];
             DataSet ds = new DataSet();
+
             SqlCommand cmd = new SqlCommand("Get_TranDetals", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@SlNo", ViewState["Code"]);
@@ -34,7 +35,7 @@ public partial class PopUpPage : System.Web.UI.Page
                 Description.InnerText = ds.Tables[0].Rows[0]["Description"].ToString();
 
                 string status = ds.Tables[0].Rows[0]["Status"].ToString();
-                ViewState["Requeststatus"] = "SentForCancel";
+                ViewState["Requeststatus"] = "Sent";
                 if (status == "SentForCancel")
                 {
                     ViewState["Requeststatus"] = "SentForCancel";
@@ -117,7 +118,7 @@ public partial class PopUpPage : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Could not approve request since number of days requested exceeds the quata limit. Please reject the transaction and request employee to create new using other leave type.";
+            lblMessage.Text = "Could not approve request since the number of days requested exceeds the quota limit. Please reject the transaction and ask the employee to create a new request using a different leave type.";
         }
     }
 
